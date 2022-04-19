@@ -49,3 +49,9 @@ var users = [
 console.log(users[0].firstName);
 // users[1] : { id: 2, firstName: "Max", address: "3rd Street" }
 console.log(users[1].firstName);
+
+var x = "first",
+  y = "second",
+  z = "third";
+
+console.log(x, y, z);
