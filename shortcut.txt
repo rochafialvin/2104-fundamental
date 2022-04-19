@@ -1,0 +1,8 @@
+Open terminal
+   CTR + J
+
+Copy Paste
+   Shift + Alt + Down Arrow
+
+Multi block
+   CTRL + D
