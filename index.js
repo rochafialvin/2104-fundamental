@@ -21,7 +21,17 @@ var firstname = "John";
 var phonenumber, _age, $quality;
 
 // 3. hanya dapat terdiri dari huruf, underscore, atau dollar sign.
-var totalbill, my_birthday, $cloud9;
+var totalbill = 1000,
+  my_birthday = 2001,
+  $cloud9 = "Awan sembilan";
+
+console.log("isi total bill", totalbill);
+
+var a = (b = c = 10);
+
+console.log("isi A", a);
+console.log("isi B", b);
+console.log("isi C", c);
 
 // 4. Case sensitive (membedakan huruf besar dan huruf kecil)
 var nextday = "Sunday";
