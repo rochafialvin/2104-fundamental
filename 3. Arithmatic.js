@@ -84,4 +84,27 @@ var lorem = 10;
 lorem = lorem + 2; // lorem = 12
 // Menjumlahkan nilai saat ini dengan nilai lain lalu hasilnya disimpan di variable yang sama
 lorem += 2; // 12 _ 2 --> 14 lalu disimpan di lorem
-console.log("lorem", lorem); // 14
+// console.log("lorem", lorem); // 14
+
+var temporary = 3;
+temporary += 1;
+// console.log("temporary", temporary);
+
+// RAM --> menyimpan data sementara
+// Ketika sebuah app berjalan, dia akan menggunakan sebagian RAM
+// Untuk digunakan menyimpan suatu data dari sebuah variable
+var a = 28;
+// Solve it 1
+a++;
+a + 1;
+console.log(a); // 29
+// Solve it 2
+a++;
+a = a + 1;
+console.log(a); // 31
+a++;
+a++;
+console.log(a); // 33
+a++;
+console.log(a + 1); // 35
+console.log(a % 2); // 0
