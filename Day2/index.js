@@ -39,3 +39,32 @@
 //   // true
 //   console.log("Register berhasil");
 // }
+
+// IF ELSE Statement
+
+// var age = 19;
+// if (age >= 18) {
+//   // Di kerjakan jika umur 18 tahun ke atas
+//   console.log("Umur Anda ", age);
+//   console.log("Permohonan diterima, silahkan lanjut ke proses berikutnya");
+// } else {
+//   // Di kerjakan jika umur dibawah 18 tahun
+//   console.log("Umur Anda ", age);
+//   console.log("Permohonan anda ditolak, umur tidak mencukupi");
+// }
+
+var username = "rochafi"; // true
+var email = ""; // true
+
+if (username && email) {
+  // true
+  console.log("Register berhasil");
+} else {
+  console.log("Registrasi gagal, mohon lengkapi data Anda");
+  if (!email) {
+    console.log("Email masih kosong");
+  }
+  if (!username) {
+    console.log("Username masih kosong");
+  }
+}
