@@ -1,0 +1,4 @@
+abc adalah sebuah variable
+
+ReferenceError: abc is not defined
+ Tidak ditemukannya variable bernama abc / Variable abc tidak pernah dibuat
