@@ -58,8 +58,42 @@
    FALSE   || TRUE    --> TRUE
    FALSE  || FALSE    --> FALSE
 */
+// console.log(true || true);
+// console.log(true || false);
+// console.log(false || true);
+// console.log(false || false);
 
-console.log(true || true);
-console.log(true || false);
-console.log(false || true);
-console.log(false || false);
+// TRUTHY & FALSY Values
+
+// Value yang akan dianggap sebagai FALSE
+// - integer nol --> 0
+// - string kosong --> ""
+// - undefined --> kosong
+// - NaN (Not a Number) --> Muncul dari hasil perhitungan yang tidak valid
+// - null --> "kosong"
+
+// 6 * "hello"; --> NaN
+
+// // true && false --> false
+// console.log(true && Boolean(0));
+// // true && true --> true
+// console.log(true && Boolean(23));
+// // true && true --> true
+// console.log(true && Boolean(-23));
+
+// var x = true;
+// var y;
+
+// // true || undefined
+// // true || false --> true
+// console.log(x || y); // true
+
+// NEGATIVE
+
+console.log(true); //--> true
+console.log(!true); //--> false
+
+console.log(false); //--> false
+console.log(!false); //--> true
+
+console.log(!(true && false)); // true
