@@ -42,6 +42,14 @@
 
 // IF ELSE Statement
 
+// Jika condition bernilai true, maka task 1 akan dikerjakan
+// Jika condition bernilai false, maka task 2 akan dikerjakan
+// if(condition){
+//    task 1
+// } else {
+//    task 2
+// }
+
 // var age = 19;
 // if (age >= 18) {
 //   // Di kerjakan jika umur 18 tahun ke atas
@@ -53,18 +61,71 @@
 //   console.log("Permohonan anda ditolak, umur tidak mencukupi");
 // }
 
-var username = "rochafi"; // true
-var email = ""; // true
+// var username = ""; // true
+// var email = ""; // true
 
-if (username && email) {
-  // true
-  console.log("Register berhasil");
+// if (username && email) {
+//   // true
+//   console.log("Register berhasil");
+// } else {
+//   console.log("Registrasi gagal, mohon lengkapi data Anda");
+//   // jika field email tidak berisi string kosong
+//   if (!email) {
+//     console.log("Email masih kosong");
+//   }
+//   // jika field username tidak berisi string kosong
+//   if (!username) {
+//     console.log("Username masih kosong");
+//   }
+// }
+
+// IF ELSE IF Statement
+// Jika condition1 : true, jalankan task1. Jika false, periksa condition2
+// Jika condition2 : true, jalankan task2. Jika false, jalankan task3
+// if (condition1) {
+//   task1;
+// } else if (condition2) {
+//   task2;
+// } else {
+//   task3;
+// }
+
+// Nilai Ujian
+
+// Points : 85 - 100 : A
+// Points : 75 - 84 : B
+// Points : 60 - 74 : C
+// Points : 0 - 59 : D
+// Points : null : F
+
+var points = 72; // B
+var grade;
+
+if (points >= 85 && points <= 100) {
+  grade = "A";
+} else if (points >= 75 && points <= 84) {
+  grade = "B";
+} else if (points >= 60 && points <= 74) {
+  grade = "C";
+} else if (points >= 0 && points <= 59) {
+  grade = "D";
 } else {
-  console.log("Registrasi gagal, mohon lengkapi data Anda");
-  if (!email) {
-    console.log("Email masih kosong");
-  }
-  if (!username) {
-    console.log("Username masih kosong");
-  }
+  grade = "F";
 }
+
+console.log({ points, grade });
+// Periksa apakah point ada di range 85 - 100
+// Jika iya, maka isi variable grade dengan huruf A
+// Jika tidak, maka periksa range berikutnya
+
+// Periksa apakah point ada di range 75 - 84
+// Jika iya, maka isi variable grade dengan huruf B
+// Jika tidak, maka periksa range berikutnya
+
+// Periksa apakah point ada di range 60 - 74
+// Jika iya, maka isi variable grade dengan huruf C
+// Jika tidak, maka periksa range berikutnya
+
+// Periksa apakah point ada di range 0 - 59
+// Jika iya, maka isi variable grade dengan huruf D
+// Jika tidak, maka grade berisi F
