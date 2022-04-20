@@ -98,11 +98,15 @@
 // Points : 0 - 59 : D
 // Points : null : F
 
-var points = 72; // B
+var points = 87; // B
 var grade;
 
 if (points >= 85 && points <= 100) {
-  grade = "A";
+  if (points >= 85 && points <= 90) {
+    grade = "A-";
+  } else {
+    grade = "A+";
+  }
 } else if (points >= 75 && points <= 84) {
   grade = "B";
 } else if (points >= 60 && points <= 74) {
@@ -112,7 +116,6 @@ if (points >= 85 && points <= 100) {
 } else {
   grade = "F";
 }
-
 console.log({ points, grade });
 // Periksa apakah point ada di range 85 - 100
 // Jika iya, maka isi variable grade dengan huruf A
