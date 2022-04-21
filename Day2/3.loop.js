@@ -8,21 +8,44 @@
 //   task;
 // }
 
-var number = 0; // 3
-var keep; // 2
-while (number < 3) {
-  // false
-  if (number == 2) {
-    // false
-    keep = number;
-  }
-  console.log(`Number : ${number}`);
-  number++;
-}
-console.log(`Selesai, nilai number : ${number}, nilai keep : ${keep} `);
+// var number = 1; // 3
+// while (number < 11) {
+//   console.log(`Number : ${number}`);
+//   number++;
+// }
 
 // Tampilkan angka genap dari 1 - 10
 // 2, 4, 6, 8, 10
 
+// var number = 2; // 12
+// while (number <= 10) {
+//   console.log(`Number : ${number}`);
+//   number += 2;
+// }
+
+var number = 1; // 4
+while (number < 11) {
+  var result = number % 2;
+  if (result == 0) {
+    console.log(`Number : ${number}`);
+  }
+  number++;
+}
+
 // Tampilkan angka ganjil dari 1 - 10
 // 1, 3, 5, 7, 9
+
+// var number = 1; // 12
+// while (number <= 10) {
+//   console.log(`Number : ${number}`);
+//   number += 2;
+// }
+
+var number = 1; // 1
+while (number < 11) {
+  var result = number % 2;
+  if (result == 1) {
+    console.log(`Number : ${number}`);
+  }
+  number++;
+}
