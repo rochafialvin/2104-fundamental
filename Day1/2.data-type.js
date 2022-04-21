@@ -3,10 +3,14 @@
 
 // Number
 // integer (angka bulat)
+parseInt
+"1.78" --> 1
 30;
 4234;
 
 // float (decimal)
+parseFloat
+"1.78" --> 1.78
 3.14;
 8.9;
 0.5;
