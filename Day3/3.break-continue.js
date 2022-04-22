@@ -20,6 +20,7 @@
 // Jangan tampilkan untuk nilai random yang dapat dibagi 2 (genap)
 
 while (true) {
+  // random = 15
   // Mencari nilai random pada range 0 - 99
   var random = Math.floor(Math.random() * 100);
   // Jika nilai random habis dibagi dua, skip ke loop berikutnya
@@ -30,7 +31,7 @@ while (true) {
   console.log(random);
   //   Jika angka random dapat dibagi 5, hentikan loop
   if (random % 5 == 0) {
-    break;
+    break; // stop. Jangan loop lagi, keluar dari sini
   }
 }
 
