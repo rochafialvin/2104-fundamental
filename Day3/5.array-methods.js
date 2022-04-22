@@ -145,11 +145,13 @@
 // Delete : Menghapus data, dan indexnya akan berisi undefined
 ///////////////////////////////////////////////////////////////
 
-// Membuat array yang menyimpan empat value
-var things = ["book", "pen", "clock", "paper"];
-// Menghapus value pada array things index ke 0, dan menggantikannya dengan undefiend
-delete things[0];
-// Menghapus value pada array things index ke 2, dan menggantikannya dengan undefiend
-delete things[2];
-// Menampilkan array things pada console
-console.log(things);
+// console.time();
+// // Membuat array yang menyimpan empat value
+// var things = ["book", "pen", "clock", "paper"];
+// // Menghapus value pada array things index ke 0, dan menggantikannya dengan undefiend
+// delete things[0];
+// // Menghapus value pada array things index ke 2, dan menggantikannya dengan undefiend
+// delete things[2];
+// // Menampilkan array things pada console
+// console.log(things);
+// console.timeEnd();
