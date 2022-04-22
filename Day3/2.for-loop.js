@@ -37,15 +37,15 @@
 // angka + string = string
 
 // number = 3
-for (var number = 1; number < 3; number++) {
-  var word = ""; // "1"
-  // i = 2
-  for (var i = 1; i < number; i++) {
-    // "" + 1 = "1"
-    word += i;
-  }
-  console.log(word);
-}
+// for (var number = 1; number < 3; number++) {
+//   var word = ""; // "1"
+//   // i = 2
+//   for (var i = 1; i < number; i++) {
+//     // "" + 1 = "1"
+//     word += i;
+//   }
+//   console.log(word);
+// }
 
 // var word = "Javascript";
 // var words = word.split("");
@@ -59,3 +59,24 @@ for (var number = 1; number < 3; number++) {
 
 // var word2 = "Javascript";
 // console.log(word2.split("").reverse().join(""));
+
+//  \n --> new line --> enter
+console.log("baris 1\nbaris2");
+
+// " * * * * * "
+var starsHorizontal = "";
+var amountHorizontal = 5;
+
+// your code goes here
+
+/*
+ *
+ *
+ *
+ *
+ *
+ */
+
+var starsVertical = "";
+var amountVrtical = 5;
+// your code goes here
