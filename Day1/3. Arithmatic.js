@@ -86,6 +86,10 @@ lorem = lorem + 2; // lorem = 12
 lorem += 2; // 12 _ 2 --> 14 lalu disimpan di lorem
 // console.log("lorem", lorem); // 14
 
+var x = 10;
+x += 2;
+// x --> 12
+
 var temporary = 3;
 temporary += 1;
 // console.log("temporary", temporary);
