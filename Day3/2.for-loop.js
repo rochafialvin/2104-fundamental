@@ -61,11 +61,18 @@
 // console.log(word2.split("").reverse().join(""));
 
 //  \n --> new line --> enter
-console.log("baris 1\nbaris2");
+// console.log("baris 1\nbaris2");
 
 // " * * * * * "
-var starsHorizontal = "";
-var amountHorizontal = 5;
+var starsHorizontal = ""; // " * * * * * "
+var amountHorizontal = 10;
+
+for (var i = 0; i < amountHorizontal; i++) {
+  // Setiap loop, apa yang ingin kita lakukan ?
+  starsHorizontal += " * ";
+}
+
+console.log(starsHorizontal);
 
 // your code goes here
 
@@ -77,6 +84,13 @@ var amountHorizontal = 5;
  *
  */
 
-var starsVertical = "";
-var amountVrtical = 5;
+var starsVertical = ""; // "*\n*\n*\n*\n*\n"
+var amountVertical = 5;
+// i = 5
+for (var i = 0; i < amountVertical; i++) {
+  // Setiap loop, apa yang ingin kita lakukan ?
+  starsVertical += "*\n";
+}
+
+console.log(starsVertical);
 // your code goes here
