@@ -2,3 +2,7 @@ abc adalah sebuah variable
 
 ReferenceError: abc is not defined
  Tidak ditemukannya variable bernama abc / Variable abc tidak pernah dibuat
+
+Error: Cannot find module '/1_fundamental/Day3/index.js'
+ Tidak dapat menemukan file index.js di dalam Day 3; atau
+ Tidak dapat menemukan direktori Day3 di dalam 1_fundamental
