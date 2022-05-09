@@ -27,5 +27,33 @@ var fruits = [
   ["Orange", 20000, 8],
 ];
 
-// [ name, price, qty, totalPrice ]
-var cart = [];
+var menu = parseInt(
+  prompt(`
+  Apa yang ingin anda lakukan :
+  1. Menampilkan daftar buah
+  2. Menambah buah
+  3. Menghapus buah
+  4. Membeli buah
+  5. Exit
+`)
+);
+
+var fruits = [
+  ["Apple", 10000, 5],
+  ["Grape", 15000, 7],
+  ["Orange", 20000, 8],
+];
+
+if (menu == 1) {
+  var list = "Daftar Buah\n\n";
+  var create = (fruit, index) => {
+    // fruit : ["Apple", 10000, 5]
+    list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
+      "id"
+    )} || stock ${fruit[2]}\n`;
+  };
+
+  fruits.forEach(create);
+
+  alert(list);
+}

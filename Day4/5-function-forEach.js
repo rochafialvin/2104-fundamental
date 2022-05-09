@@ -61,8 +61,8 @@ var xyz = (value) => {
 //////////////////////////////////////////////////////////////////////
 
 var oddEvenSeparator = (arr) => {
-  var odd = []; // ganjil
-  var even = []; // genap
+  var odd = [11, 41, 63]; // ganjil
+  var even = [22, 34, 52]; // genap
 
   var separator = (value) => {
     // value : 34
