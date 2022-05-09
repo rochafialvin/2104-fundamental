@@ -56,4 +56,29 @@ if (menu == 1) {
   fruits.forEach(create);
 
   alert(list);
+} else if (menu == 2) {
+  // Input nama, harga, stock untuk buah yang baru
+  var newName = prompt("Masukkan nama buah :");
+  var newPrice = parseInt(prompt("Masukkan jumlah harga satuan :"));
+  var newStock = parseInt(prompt("Masukkan jumlah stock :"));
+
+  // Dibuat menjadi satu array dengan urutan layaknya data pada fruits
+  var newFruit = [newName, newPrice, newStock];
+
+  // Array yang sudah jadi di push ke array fruits
+  fruits.push(newFruit);
+
+  // Menampilkan list buah
+  var list = "Daftar Buah\n\n";
+
+  var create = (fruit, index) => {
+    // fruit : ["Apple", 10000, 5]
+    list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
+      "id"
+    )} || stock ${fruit[2]}\n`;
+  };
+
+  fruits.forEach(create);
+
+  alert(list);
 }
