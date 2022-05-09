@@ -42,6 +42,8 @@ var fruits = [
   ["Apple", 10000, 5],
   ["Grape", 15000, 7],
   ["Orange", 20000, 8],
+  ["Avocado", 25000, 9],
+  ["Kiwi", 30000, 10],
 ];
 
 if (menu == 1) {
@@ -71,6 +73,33 @@ if (menu == 1) {
   // Menampilkan list buah
   var list = "Daftar Buah\n\n";
 
+  var create = (fruit, index) => {
+    // fruit : ["Apple", 10000, 5]
+    list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
+      "id"
+    )} || stock ${fruit[2]}\n`;
+  };
+
+  fruits.forEach(create);
+
+  alert(list);
+} else if (menu == 3) {
+  // cari tahu index buah yang ingin di hapus
+  var list = "Menghapus buah\n\n";
+  var create = (fruit, index) => {
+    // fruit : ["Apple", 10000, 5]
+    list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
+      "id"
+    )} || stock ${fruit[2]}\n`;
+  };
+
+  fruits.forEach(create);
+
+  var selIndex = parseInt(prompt(list)) - 1;
+  // Menghapus satu data pada array
+  fruits.splice(selIndex, 1);
+  // Tampilkan list buah
+  var list = "Daftar Buah\n\n";
   var create = (fruit, index) => {
     // fruit : ["Apple", 10000, 5]
     list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
