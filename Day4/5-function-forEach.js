@@ -52,7 +52,7 @@ var xyz = (value) => {
   console.log({ value });
 };
 
-numbers[1].forEach(xyz);
+// numbers[1].forEach(xyz);
 
 ///////////////////////////////////////////////////////////////////////
 // Buat sebuah function yang dapat memisahkan nilai genap dan ganjil //
@@ -61,9 +61,23 @@ numbers[1].forEach(xyz);
 //////////////////////////////////////////////////////////////////////
 
 var oddEvenSeparator = (arr) => {
-  // Gimana nih ?
+  var odd = []; // ganjil
+  var even = []; // genap
+
+  var separator = (value) => {
+    // value : 34
+    if (value % 2 == 0) {
+      even.push(value);
+    } else {
+      odd.push(value);
+    }
+  };
+  // arr : [11, 22, 34, 41, 52, 63, 71, 86]
+  arr.forEach(separator);
+
+  return [odd, even];
 };
 
-// result = [ [11, 41, 63 ,71], [22, 34, 52, 86] ]
-var result = oddEvenSeparator([11, 22, 34, 41, 52, 63, 71, 86]);
+var numbers = [11, 22, 34, 41, 52, 63, 71, 86];
+var result = oddEvenSeparator(numbers);
 console.log(result);
