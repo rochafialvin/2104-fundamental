@@ -74,7 +74,7 @@ var green = function () {
   console.log(`Hijau Daun`);
 };
 
-// ARROW FUNCTION ( ES 6 ) 2015
+// Expression ARROW FUNCTION ( ES 6 ) 2015
 var earth = () => {
   console.log(`Hijau Daun`);
 };
