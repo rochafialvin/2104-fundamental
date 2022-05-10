@@ -3,13 +3,16 @@
 ////////
 
 // map berguna untuk merubah bentuk data
+// Secara jumlah tidak berubah ; masuk 5 keluar 5
+// Secara bentuk bisa berubah; masuk string keluar angka
 
 // map merupakan method dari array
 // map akan menerima satu argument berupa function (callback function)
 // callback function harus memiliki satu buah parameter
 // map akan menjalankan callback function sebanyak data pada array
 // setiap menjalankan callback, data pada array akan masuk secara bergantian
-// callback function HARUS mereturn sebuah value
+// callback function HARUS mereturn sebuah value (string, number dll)
+// apa yang di return callback function, itu yang akan dimasukkan ke array
 // map akan mereturn sebuah array
 
 var numbers = [7, 5, 3];
