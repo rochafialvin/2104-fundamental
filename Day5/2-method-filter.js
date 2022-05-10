@@ -6,6 +6,11 @@
 // Secara jumlah bisa berubah ; proses 5 keluar 3
 // Secara bentuk tidak berubah; proses string keluar string
 
+arr.filter((parameter) => {
+  // ...
+  return boolean;
+});
+
 // filter merupakan method dari array
 // filter akan menerima satu argument berupa function (callback function)
 // callback function harus memiliki satu buah parameter
