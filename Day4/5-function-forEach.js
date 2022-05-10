@@ -2,6 +2,12 @@
 /* FOR EACH */
 //////////////
 
+// forEach merupakan method dari array
+// forEach akan menerima satu argument berupa function (callback function)
+// callback function harus memiliki satu buah parameter
+// forEach akan menjalankan callback function sebanyak data pada array
+// setiap menjalankan callback, data pada array akan masuk secara bergantian
+
 // var numbers = [1, 3, 5];
 // index 0 = 1
 // index 1 = 3
@@ -52,7 +58,7 @@ var xyz = (value) => {
   console.log({ value });
 };
 
-// numbers[1].forEach(xyz);
+numbers.forEach(xyz);
 
 ///////////////////////////////////////////////////////////////////////
 // Buat sebuah function yang dapat memisahkan nilai genap dan ganjil //

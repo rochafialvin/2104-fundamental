@@ -22,7 +22,7 @@
 
 // [ name, price, stock ]
 var fruits = [
-  ["Apple", 10000, 5],
+  ["Apple", 10000, 5], // 1. Appple || Rp.10.000 || stock : 5
   ["Grape", 15000, 7],
   ["Orange", 20000, 8],
 ];
@@ -37,14 +37,6 @@ var menu = parseInt(
   5. Exit
 `)
 );
-
-var fruits = [
-  ["Apple", 10000, 5],
-  ["Grape", 15000, 7],
-  ["Orange", 20000, 8],
-  ["Avocado", 25000, 9],
-  ["Kiwi", 30000, 10],
-];
 
 if (menu == 1) {
   var list = "Daftar Buah\n\n";
