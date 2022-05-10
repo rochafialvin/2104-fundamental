@@ -15,6 +15,7 @@
 // saat callback function mereturn true, data yang diproses akan dimasukkan ke array
 // filter akan mereturn sebuah array
 
+var person = { firstName: "Alvin", address: "Jakarta" };
 var salaries = [10000000, 7500000, 6000000, 3000000, 4100000];
 
 // Filter gaji di atas 4.000.000
