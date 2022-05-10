@@ -15,16 +15,30 @@
 // ];                                                                                                   //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-var persons = [
+var data = [
   ["John", 43, "Jakarta"],
   ["Baby", 21, "Jakarta"],
   ["Tony", 34, "Surabaya"],
-  ["Justin", 29, "Banjarmasin"],
+  ["Dustin Timberlake", 29, "Banjarmasin"],
 ];
 
-var ageAddress = (arr) => {
-  // Kerjakan disini
+/*
+   [
+      ["John", 43, "Jakarta"],
+      ["Baby", 21, "Jakarta"],
+      ["Tony", 34, "Surabaya"]
+   ]
+*/
+var ageAddress = (persons) => {
+  var result = persons.filter((person) => {
+    // person : ["Dustin Timberlake", 29, "Banjarmasin"]
+    // false || false
+    // false
+    return person[1] > 30 || person[2] == "Jakarta";
+  });
+
+  return result;
 };
 
-var filteredPersons = ageAddress(persons);
-console.table(filteredPersons);
+var filteredPersons = ageAddress(data);
+console.log(filteredPersons);
