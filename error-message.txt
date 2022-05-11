@@ -6,3 +6,10 @@ ReferenceError: abc is not defined
 Error: Cannot find module '/1_fundamental/Day3/index.js'
  Tidak dapat menemukan file index.js di dalam Day 3; atau
  Tidak dapat menemukan direktori Day3 di dalam 1_fundamental
+
+TypeError: running is not a function
+   variable running tidak menyimpan function
+   
+TypeError: x.toUpperCase is not a function
+   x tidak memiliki method yang bernama toUpperCase
+   toUpperCase milik x bukanlah sebuah function
