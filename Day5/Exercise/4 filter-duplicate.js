@@ -5,7 +5,7 @@ var filterDuplicate = (arr, cb) => {
 var numbers = [1, 2, 3, 4, 5];
 
 var greaterThanThree = (number) => {
-  return number > 3;
+  return number > 9;
 };
 
 // TEST
