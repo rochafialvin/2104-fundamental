@@ -182,99 +182,120 @@
 // console.log(numbers); // [ 101, 12, 2, 32, 41 ]
 
 // USE CALLBACK FUNCTION //
-var numbers = [32, 101, 12, 3];
+// var numbers = [32, 101, 12, 3];
 
-// positif : sort number2 before number1
-// negatif : sort number1 before number2
-// zero : keep original order of number1 and number2
-var ascending = (number1, number2) => {
-  // number1 : 32
-  // number2 : 12
-  if (number1 < number2) {
-    return -1;
-  } else if (number1 > number2) {
-    return 1;
-  } else {
-    return 0;
-  }
-};
-var descending = (number1, number2) => {
-  // number1 : 32
-  // number2 : 12
-  if (number1 < number2) {
-    return 1;
-  } else if (number1 > number2) {
-    return -1;
-  } else {
-    return 0;
-  }
-};
+// // positif : sort number2 before number1
+// // negatif : sort number1 before number2
+// // zero : keep original order of number1 and number2
+// var ascending = (number1, number2) => {
+//   // number1 : 32
+//   // number2 : 12
+//   if (number1 < number2) {
+//     return -1;
+//   } else if (number1 > number2) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// };
+// var descending = (number1, number2) => {
+//   // number1 : 32
+//   // number2 : 12
+//   if (number1 < number2) {
+//     return 1;
+//   } else if (number1 > number2) {
+//     return -1;
+//   } else {
+//     return 0;
+//   }
+// };
 
-// console.log(numbers);
-// numbers.sort(descending);
-// console.log(numbers);
+// // console.log(numbers);
+// // numbers.sort(descending);
+// // console.log(numbers);
 
-var salaries = [
-  ["Fedrick", 720],
-  ["John Titor", 360],
-  ["Roschild", 10000],
-];
+// var salaries = [
+//   ["Fedrick", 720],
+//   ["John Titor", 360],
+//   ["Roschild", 10000],
+// ];
 
-// positif : sort person2 before person1
-// negatif : sort person1 before person2
-// zero : keep original order of person1 and person2
-var sortSalary = (person1, person2) => {
-  // person1 : ["Fedrick", 720]
-  // person2 : ["John Titor", 360]
+// // positif : sort person2 before person1
+// // negatif : sort person1 before person2
+// // zero : keep original order of person1 and person2
+// var sortSalary = (person1, person2) => {
+//   // person1 : ["Fedrick", 720]
+//   // person2 : ["John Titor", 360]
 
-  if (person1[1] < person2[1]) {
-    return -1;
-  } else if (person1[1] > person2[1]) {
-    return 1;
-  } else {
-    return 0;
-  }
-};
+//   if (person1[1] < person2[1]) {
+//     return -1;
+//   } else if (person1[1] > person2[1]) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// };
 
-// console.log(salaries);
-// salaries.sort(sortSalary);
-// console.log(salaries);
+// // console.log(salaries);
+// // salaries.sort(sortSalary);
+// // console.log(salaries);
 
-var data = [
-  ["John", 43, "Jakarta"],
-  ["Tony", 34, "Surabaya"],
-  ["Ban", 35, "Jakarta"],
-  ["Dustin Timberlake", 29, "Banjarmasin"],
-  ["Derieri", 34, "Jakarta"],
-];
+// var data = [
+//   ["John", 43, "Jakarta"],
+//   ["Tony", 34, "Surabaya"],
+//   ["Ban", 35, "Jakarta"],
+//   ["Dustin Timberlake", 29, "Banjarmasin"],
+//   ["Derieri", 34, "Jakarta"],
+// ];
 
-//  ["Dustin Timberlake", 29, "Banjarmasin"]
-//  ["Derieri", 34, "Jakarta"]
-//  ["Tony", 34, "Surabaya"]
-//  ["John", 43, "Jakarta"]
+// //  ["Dustin Timberlake", 29, "Banjarmasin"]
+// //  ["Derieri", 34, "Jakarta"]
+// //  ["Tony", 34, "Surabaya"]
+// //  ["John", 43, "Jakarta"]
 
-// positif : sort user2 before user1
-// negatif : sort user1 before user2
-// zero : keep original order of user1 and user2
-var compareAgeAdress = (user1, user2) => {
-  // user1 : ["Tony", 34, "Surabaya"]
-  // user2 : ["John", 34, "Jakarta"]
+// // positif : sort user2 before user1
+// // negatif : sort user1 before user2
+// // zero : keep original order of user1 and user2
+// var compareAgeAdress = (user1, user2) => {
+//   // user1 : ["Tony", 34, "Surabaya"]
+//   // user2 : ["John", 34, "Jakarta"]
 
-  if (user1[1] > user2[1]) {
-    return 1;
-  } else if (user1[1] < user2[1]) {
-    return -1;
-  } else {
-    // umur mereka sama
-    if (user1[2] > user2[2]) {
-      return 1;
-    } else if (user1[2] < user2[2]) {
-      return -1;
-    } else {
-      return 0;
-    }
-  }
-};
+//   if (user1[1] > user2[1]) {
+//     return 1;
+//   } else if (user1[1] < user2[1]) {
+//     return -1;
+//   } else {
+//     // umur mereka sama
+//     if (user1[2] > user2[2]) {
+//       return 1;
+//     } else if (user1[2] < user2[2]) {
+//       return -1;
+//     } else {
+//       return 0;
+//     }
+//   }
+// };
 
-data.sort(compareAgeAdress);
-console.log(data);
+// data.sort(compareAgeAdress);
+// console.log(data);
+
+/////////////////////////////////////////////////
+// REVERSE : Membalikkan urutan data pada array
+/////////////////////////////////////////////////
+
+// var days = ["sunday", "monday", "tuesday", "wednesday"];
+
+// console.log(days);
+
+// days.reverse();
+
+// console.log(days);
+
+/////////////////////////////////////////////////////////////////
+// JOIN : Menggabungkan data pada array dengan karakter tertentu
+/////////////////////////////////////////////////////////////////
+
+var days = ["sunday", "monday", "tuesday", "wednesday"];
+
+var joinDash = days.join(", ");
+console.log(joinDash);
