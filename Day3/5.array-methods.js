@@ -174,9 +174,31 @@
 // animals.sort();
 // console.log(animals); // [ 'Bird', 'anoa', 'cameleon', 'cat', 'dragon' ]
 
-var numbers = [32, 101, 12, 41, 2];
-// ["32", "101", "12", "41", "2"];
+// var numbers = [32, 101, 12, 41, 2];
+// // ["32", "101", "12", "41", "2"];
 
-numbers.sort();
+// numbers.sort();
 
-console.log(numbers); // [ 101, 12, 2, 32, 41 ]
+// console.log(numbers); // [ 101, 12, 2, 32, 41 ]
+
+// USE CALLBACK FUNCTION //
+var numbers = [32, 101, 12, 3];
+
+// positif : sort number2 before number1
+// negatif : sort number1 before number2
+// zero : keep original order of number1 and number2
+var ascending = (number1, number2) => {
+  // number1 : 32
+  // number2 : 12
+  if (number1 < number2) {
+    return -1;
+  } else if (number1 > number2) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
+console.log(numbers);
+numbers.sort(ascending);
+console.log(numbers);
