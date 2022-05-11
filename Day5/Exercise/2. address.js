@@ -17,7 +17,7 @@
 
 var data = [
   ["John", 43, "Jakarta"],
-  [v, 21, "Jakarta"],
+  ["Derieri", 21, "Jakarta"],
   ["Tony", 34, "Surabaya"],
   ["Dustin Timberlake", 29, "Banjarmasin"],
 ];

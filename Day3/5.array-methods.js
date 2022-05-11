@@ -198,7 +198,51 @@ var ascending = (number1, number2) => {
     return 0;
   }
 };
+var descending = (number1, number2) => {
+  // number1 : 32
+  // number2 : 12
+  if (number1 < number2) {
+    return 1;
+  } else if (number1 > number2) {
+    return -1;
+  } else {
+    return 0;
+  }
+};
 
-console.log(numbers);
-numbers.sort(ascending);
-console.log(numbers);
+// console.log(numbers);
+// numbers.sort(descending);
+// console.log(numbers);
+
+var salaries = [
+  ["Fedrick", 720],
+  ["John Titor", 360],
+  ["Roschild", 10000],
+];
+
+// positif : sort person2 before person1
+// negatif : sort person1 before person2
+// zero : keep original order of person1 and person2
+var sortSalary = (person1, person2) => {
+  // person1 : ["Fedrick", 720]
+  // person2 : ["John Titor", 360]
+
+  if (person1[1] < person2[1]) {
+    return -1;
+  } else if (person1[1] > person2[1]) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
+console.log(salaries);
+salaries.sort(sortSalary);
+console.log(salaries);
+
+var data = [
+  ["John", 43, "Jakarta"],
+  ["Tony", 34, "Surabaya"],
+  ["Dustin Timberlake", 29, "Banjarmasin"],
+  ["Derieri", 34, "Jakarta"],
+];
