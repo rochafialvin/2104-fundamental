@@ -236,13 +236,45 @@ var sortSalary = (person1, person2) => {
   }
 };
 
-console.log(salaries);
-salaries.sort(sortSalary);
-console.log(salaries);
+// console.log(salaries);
+// salaries.sort(sortSalary);
+// console.log(salaries);
 
 var data = [
   ["John", 43, "Jakarta"],
   ["Tony", 34, "Surabaya"],
+  ["Ban", 35, "Jakarta"],
   ["Dustin Timberlake", 29, "Banjarmasin"],
   ["Derieri", 34, "Jakarta"],
 ];
+
+//  ["Dustin Timberlake", 29, "Banjarmasin"]
+//  ["Derieri", 34, "Jakarta"]
+//  ["Tony", 34, "Surabaya"]
+//  ["John", 43, "Jakarta"]
+
+// positif : sort user2 before user1
+// negatif : sort user1 before user2
+// zero : keep original order of user1 and user2
+var compareAgeAdress = (user1, user2) => {
+  // user1 : ["Tony", 34, "Surabaya"]
+  // user2 : ["John", 34, "Jakarta"]
+
+  if (user1[1] > user2[1]) {
+    return 1;
+  } else if (user1[1] < user2[1]) {
+    return -1;
+  } else {
+    // umur mereka sama
+    if (user1[2] > user2[2]) {
+      return 1;
+    } else if (user1[2] < user2[2]) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+};
+
+data.sort(compareAgeAdress);
+console.log(data);
