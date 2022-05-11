@@ -155,3 +155,28 @@
 // // Menampilkan array things pada console
 // console.log(things);
 // console.timeEnd();
+
+//////////////////////////////////////////////////////////////////////
+// SORT : Mengurutkan data pada array secara ascending (0 - 9 / a - z)
+//////////////////////////////////////////////////////////////////////
+// var text = "Purwadhika";
+// var result = text.toUpperCase();
+// console.log(text); // Purwadhika
+// console.log(result); // PURWADHIKA
+
+// var animals = ["anoa", "dragon", "cameleon", "bird", "cat"];
+// var result = animals.sort(); // merubah nilai asli, me return
+// console.log(animals); // [ 'anoa', 'bird', 'cameleon', 'cat', 'dragon' ]
+// console.log(result); // [ 'anoa', 'bird', 'cameleon', 'cat', 'dragon' ]
+
+// Check ASCII table : https://www.asciitable.com/
+// var animals = ["anoa", "dragon", "cameleon", "Bird", "cat"];
+// animals.sort();
+// console.log(animals); // [ 'Bird', 'anoa', 'cameleon', 'cat', 'dragon' ]
+
+var numbers = [32, 101, 12, 41, 2];
+// ["32", "101", "12", "41", "2"];
+
+numbers.sort();
+
+console.log(numbers); // [ 101, 12, 2, 32, 41 ]
