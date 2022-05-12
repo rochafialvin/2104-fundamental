@@ -21,7 +21,7 @@ var mapper = (users) => {
   });
 };
 
-// console.log(mapper(data));
+console.log(mapper(data));
 
 var sum = (a, b) => {
   var result = a + b;
@@ -32,16 +32,16 @@ var sum = (a, b) => {
   return a + b;
 };
 
-var result = sum(3, 4)
+var result = sum(3, 4);
 
 // Jika hanya memiliki satu parameter, boleh dihilangkan kurungnya
-var a = value => {
-  console.log(value)
+var a = (value) => {
+  console.log(value);
 };
 
 // Jika yang dilakukan function hanya me return, boleh dihilangkan keyword return dan kurawalnya
-var sum = (a, b) => a + b
+var sum = (a, b) => a + b;
 
 // Hanya memiliki satu parameter dan hanya melakukan return.
-var multipleTwo = a => a * 2
-var result = multipleTwo(10)
+var multipleTwo = (a) => a * 2;
+var result = multipleTwo(10);
