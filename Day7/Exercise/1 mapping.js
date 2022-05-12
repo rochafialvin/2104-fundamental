@@ -1,5 +1,4 @@
 var data = [
-  // {id: 1, firstNanmeL :"John", age: 43, city: "Jakarta"}
   ["John", 43, "Jakarta"],
   ["Derieri", 21, "Jakarta"],
   ["Tony", 34, "Surabaya"],
@@ -8,11 +7,41 @@ var data = [
 
 // nama function : mapper
 // Buatlah sebuah function yang menerima satu array
-// return hasil array of object
+var mapper = (users) => {
+  // [{ firstName: "John", age: 43, city: "Jakarta"}]
+  return users.map((user, index) => {
+    // user : ["Derieri", 21, "Jakarta"]
+    // index: 1
+    return {
+      id: index + 1,
+      firstName: user[0],
+      age: user[1],
+      city: user[2],
+    };
+  });
+};
 
-var result = [
-  { id: 1, firstNanmeL: "John", age: 43, city: "Jakarta" },
-  { id: 2, firstNanmeL: "Derieri", age: 21, city: "Jakarta" },
-  { id: 3, firstNanmeL: "Tony", age: 34, city: "Jakarta" },
-  { id: 4, firstNanmeL: "Dustin Timberlake", age: 29, city: "Jakarta" },
-];
+// console.log(mapper(data));
+
+var sum = (a, b) => {
+  var result = a + b;
+  return result;
+};
+
+var sum = (a, b) => {
+  return a + b;
+};
+
+var result = sum(3, 4)
+
+// Jika hanya memiliki satu parameter, boleh dihilangkan kurungnya
+var a = value => {
+  console.log(value)
+};
+
+// Jika yang dilakukan function hanya me return, boleh dihilangkan keyword return dan kurawalnya
+var sum = (a, b) => a + b
+
+// Hanya memiliki satu parameter dan hanya melakukan return.
+var multipleTwo = a => a * 2
+var result = multipleTwo(10)
