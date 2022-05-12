@@ -32,17 +32,17 @@ var captain = {
 ///////////////////////
 
 // object : {name, pets, active, ...}
-// console.log(captain);
+console.log(captain);
 // Kuroky
-// console.log(captain.firstName);
+console.log(captain.firstName);
 // 170
-// console.log(captain.height);
+console.log(captain.height);
 // ["cat", "fox", "bird"]
-// console.log(captain.pets);
+console.log(captain.pets);
 // "fox"
-// console.log(captain.pets[1]);
+console.log(captain.pets[1]);
 // Playing dota
-// captain.play("dota");
+captain.play("dota");
 
 ////////////////////////////
 /* Access with bracket [] */
