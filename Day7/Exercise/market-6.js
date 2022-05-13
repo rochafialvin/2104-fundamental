@@ -52,7 +52,7 @@ while (true) {
     var newPrice = parseInt(prompt("Masukkan jumlah harga satuan :"));
     var newStock = parseInt(prompt("Masukkan jumlah stock :"));
 
-    // Dibuat menjadi satu array dengan urutan layaknya data pada fruits
+    // Dibuat menjadi satu object dengan property name, price stock
     var newFruit = { name: newName, price: newPrice, stock: newStock };
 
     // Array yang sudah jadi di push ke array fruits
@@ -63,55 +63,28 @@ while (true) {
     alert(list);
   } else if (menu == 3) {
     // cari tahu index buah yang ingin di hapus
-    var list = "Menghapus buah\n\n";
-    var create = (fruit, index) => {
-      // fruit : ["Apple", 10000, 5]
-      list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
-        "id"
-      )} || stock ${fruit[2]}\n`;
-    };
-
-    fruits.forEach(create);
-
+    var list = createFruitList(fruits);
     var selIndex = parseInt(prompt(list)) - 1;
     // Menghapus satu data pada array
     fruits.splice(selIndex, 1);
     // Tampilkan list buah
-    var list = "Daftar Buah\n\n";
-    var create = (fruit, index) => {
-      // fruit : ["Apple", 10000, 5]
-      list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
-        "id"
-      )} || stock ${fruit[2]}\n`;
-    };
-
-    fruits.forEach(create);
-
+    var list = createFruitList(fruits);
     alert(list);
   } else if (menu == 4) {
     var cart = [
-      // ["Apple", 10000, 3]
-      // ["Orang", 15000, 2]
+      // {name: "Apple", price: 10000, quantity: 3}
+      // {name: "Orange", price: 15000, quantity: 2}
     ];
     while (true) {
       // 1. Menampilkan daftar buah & user memilih buah
-      var list = "Daftar Buah\n\n";
-      var create = (fruit, index) => {
-        console.log(fruit);
-        list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
-          "id"
-        )} || stock ${fruit[2]}\n`;
-      };
-
-      fruits.forEach(create);
-
+      var list = createFruitList(fruits);
       // 1 --> Apple . Index buah yang dipilih (dibeli)
       var selectedIndex = parseInt(prompt(list)) - 1;
       // selectedIndex = 0
-      // fruits[selectedIndex] = ["Apple", 10000, 5]
-      var selName = fruits[selectedIndex][0]; // Apple
-      var selPrice = fruits[selectedIndex][1]; // 10000
-      var selStock = fruits[selectedIndex][2]; // 5
+      // fruits[selectedIndex] = { name: "Apple", price: 10000, stock: 5 }
+      var selName = fruits[selectedIndex].name; // Apple
+      var selPrice = fruits[selectedIndex].price; // 10000
+      var selStock = fruits[selectedIndex].stock; // 5
       // 2. Minta user input quantity dari buaawdawdawdawdh yang dipilih
       while (true) {
         var selQuantity = parseInt(
@@ -124,23 +97,24 @@ while (true) {
           );
         } else {
           // Masukan ke keranjang
-          // [Apple, 10000, 3]
-          cart.push([selName, selPrice, selQuantity]);
+          // {name: "Apple", price: 10000, quantity: 3}
+          cart.push({ name: selName, price: selPrice, quantity: selQuantity });
           // Kurangi stock buah yang dipilih
-          // fruits[selectedIndex][2] = fruits[selectedIndex][2] - selQuantity;
-          fruits[selectedIndex][2] -= selQuantity;
+          // fruits[selectedIndex].stock = fruits[selectedIndex].stock - selQuantity;
+          fruits[selectedIndex].stock -= selQuantity;
 
           break;
         }
       }
 
       // 3. Tampilkan isi keranjang dan tanyakan mau belanja buah lain atau tidak
-
       var list = "Isi keranjang\n\n";
       var create = (fruit, index) => {
-        list += `${index + 1}. ${fruit[0]} || Rp. ${fruit[1].toLocaleString(
-          "id"
-        )} || quantity ${fruit[2]}\n`;
+        list += `${index + 1}. ${
+          fruit.name
+        } || Rp. ${fruit.price.toLocaleString("id")} || quantity ${
+          fruit.quantity
+        }\n`;
       };
 
       cart.forEach(create);
@@ -157,15 +131,17 @@ while (true) {
     var totalPrice = 0; // 60000
 
     cart.forEach((data) => {
-      // data : ["Orange", 15000, 2]
-      var result = data[1] * data[2];
+      // data : {name: "Apple", price: 10000, quantity: 3}
+      var result = data.price * data.quantity;
       totalPrice += result;
     });
 
     var finalReport = "";
     cart.forEach(
       (data) =>
-        (finalReport += `${data[0]} : ${data[1]} * ${data[2]} = ${data[1]} * ${data[2]}\n`)
+        (finalReport += `${data.name} : ${data.price} * ${data.quantity} = ${
+          data.price * data.quantity
+        }\n`)
     );
 
     var list = `Detail Belanja\n\n${finalReport}\n\nTotal: ${totalPrice}`;
