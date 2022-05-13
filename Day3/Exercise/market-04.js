@@ -177,11 +177,24 @@ while (true) {
       totalPrice += result;
     });
 
+    const cart = [
+      ["Apple", 1000, 6],
+      ["Grape", 1200, 3],
+    ];
+
+    /*
+      Detail belanja
+
+      Apple : 1000 * 6 = 6000
+      Grape : 1200 * 3 = 3600
+    */
+
     var finalReport = "";
-    cart.forEach(
-      (data) =>
-        (finalReport += `${data[0]} : ${data[1]} * ${data[2]} = ${data[1]} * ${data[2]}\n`)
-    );
+    cart.forEach((data) => {
+      finalReport += `${data[0]} : ${data[1]} * ${data[2]} = ${
+        data[1] * data[2]
+      } \n`;
+    });
 
     var list = `Detail Belanja\n\n${finalReport}\n\nTotal: ${totalPrice}`;
 
