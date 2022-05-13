@@ -10,13 +10,22 @@ let fruits = [
   { name: "Orange", price: 20000, stock: 8 },
 ];
 
+/*
+  Daftar Buah
+  
+  1. Apple || Rp. 10.000 || stock : 5
+  2. Grape || Rp. 15.000 || stock : 7
+  3. Orange || Rp. 20.000 || stock : 8
+*/
 const createFruitList = (arr) => {
-  let list = "Daftar Buah\n\n";
+  let list = `Daftar buah\n\n`;
+
   arr.forEach((fruit, index) => {
     // fruit : { name: "Apple", price: 10000, stock: 5 }
-    list += `${index + 1}. ${fruit.name} || Rp. ${fruit.price.toLocaleString(
-      "id"
-    )} || stock : ${fruit.stock}\n`;
+    // index : 0 + 1 = 1
+    list += `${index + 1}. ${fruit.name} || Rp. ${fruit.price} || stock : ${
+      fruit.stock
+    }\n`;
   });
 
   return list;
