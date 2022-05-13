@@ -46,10 +46,10 @@ function z() {
 
 /* Syntax */
 class Player {
-  constructor(_name, _age, _game) {
-    this.name = _name;
-    this.age = _age;
-    this.game = _game;
+  constructor(name, age, game) {
+    this.name = name;
+    this.age = age;
+    this.game = game;
   }
 
   introduction() {
