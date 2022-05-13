@@ -17,8 +17,8 @@ let fruits = [
   2. Grape || Rp. 15.000 || stock : 7
   3. Orange || Rp. 20.000 || stock : 8
 */
-const createFruitList = (arr) => {
-  let list = `Daftar buah\n\n`;
+const createFruitList = (arr, kata) => {
+  let list = `${kata}\n\n`;
 
   arr.forEach((fruit, index) => {
     // fruit : { name: "Apple", price: 10000, stock: 5 }
@@ -44,7 +44,7 @@ while (true) {
   );
   // menu = "abc"
   if (menu == 1) {
-    const list = createFruitList(fruits);
+    const list = createFruitList(fruits, "Daftar buah");
     alert(list);
   } else if (menu == 2) {
     // Input nama, harga, stock untuk buah yang baru
@@ -63,12 +63,12 @@ while (true) {
     alert(list);
   } else if (menu == 3) {
     // cari tahu index buah yang ingin di hapus
-    var list = createFruitList(fruits);
+    var list = createFruitList(fruits, "Menghapus buah");
     var selIndex = parseInt(prompt(list)) - 1;
     // Menghapus satu data pada array
     fruits.splice(selIndex, 1);
     // Tampilkan list buah
-    var list = createFruitList(fruits);
+    var list = createFruitList(fruits, "Daftar buah");
     alert(list);
   } else if (menu == 4) {
     var cart = [
@@ -77,7 +77,7 @@ while (true) {
     ];
     while (true) {
       // 1. Menampilkan daftar buah & user memilih buah
-      var list = createFruitList(fruits);
+      var list = createFruitList(fruits, "Membeli buah");
       // 1 --> Apple . Index buah yang dipilih (dibeli)
       var selectedIndex = parseInt(prompt(list)) - 1;
       // selectedIndex = 0
