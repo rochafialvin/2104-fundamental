@@ -45,6 +45,5 @@ var windah = new ProPlayer(
   "Indonesia",
   "Rex Regum Qeon"
 );
-// console.log(windah);
 windah.introduction();
 windah.myTeam();
