@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Form</title>
+
+    <style>
+      body {
+        font-size: 1.2em;
+      }
+
+      select option {
+        font-size: 1.2em;
+      }
+
+      select {
+        height: 30px;
+      }
+
+      label {
+        display: inline-block;
+        width: 120px;
+        padding-right: 10px;
+      }
+
+      input[type="button"] {
+        width: 350px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interactive Form</h1>
+
+    <form>
+      <p>
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </p>
+      <p>
+        <label for="price">Price</label>
+        <input type="number" id="price" />
+      </p>
+      <p>
+        <!-- label : Tag -->
+        <!-- for : Attribute -->
+        <!-- Hello : Attribute Value -->
+        <!-- Condition : Content -->
+        <!-- <label for="hello">Condition</label> : Element -->
+        <label for="hello">Condition</label>
+        <input type="radio" name="condition" value="Baru" id="new" />
+        <label for="new">New</label>
+        <input type="radio" name="condition" value="Bekas" id="second" />
+        <label for="second">Second</label>
+      </p>
+      <p>
+        <label>Warehouse</label>
+        <select id="warehouse">
+          <option value="JKT">Jakarta</option>
+          <option value="BDG">Bandung</option>
+          <option value="DIY">Jogja</option>
+        </select>
+      </p>
+      <p>
+        <label>Courier</label>
+        <input type="checkbox" name="courier" value="JNE" id="jne" /><label
+          for="jne"
+          >JNE</label
+        >
+        <input type="checkbox" name="courier" value="J&T" id="j&t" /><label
+          for="j&t"
+          >J&T</label
+        >
+        <input
+          type="checkbox"
+          name="courier"
+          value="Ninja_Express"
+          id="ninja"
+        /><label for="ninja">Ninja Express</label>
+      </p>
+
+      <input type="button" value="Create" onclick="createInfo()" />
+    </form>
+    <p id="result">Waiting for result ...</p>
+
+    <script src="./form.js"></script>
+  </body>
+</html>
