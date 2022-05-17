@@ -57,9 +57,18 @@
       <p>
         <label>Warehouse</label>
         <select id="warehouse">
-          <option value="JKT">Jakarta</option>
-          <option value="BDG">Bandung</option>
-          <option value="DIY">Jogja</option>
+          <optgroup label="DKI Jakarta">
+            <option value="jaktim">Jakarta Timur</option>
+            <option value="jaksel">Jakarta Selatan</option>
+          </optgroup>
+          <optgroup label="Jawa Barat">
+            <option value="Bekasi">Bekasi</option>
+            <option value="Bandung">Bandung</option>
+          </optgroup>
+          <optgroup label="Jawa Tengah">
+            <option value="semarang">Semarang</option>
+            <option value="klaten">Klaten</option>
+          </optgroup>
         </select>
       </p>
       <p>
@@ -84,6 +93,7 @@
     </form>
     <p id="result">Waiting for result ...</p>
 
+    <div style="height: 1000px"></div>
     <script src="./form.js"></script>
   </body>
 </html>
