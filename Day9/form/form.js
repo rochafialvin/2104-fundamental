@@ -23,8 +23,16 @@ const createInfo = () => {
   // couriers = [<input>, <input>]
   // couriers[0] = <input>.value --> couriers[0].value
   // couriers[1] = <input>.value --> couriers[1].value
+  let courierList = "";
+  couriers.forEach((courier) => (courierList += `${courier.value} `));
+
+  const information = `Name : ${name} <br/>
+  Price : ${price} <br/>
+  Condition : ${condition} <br/>
+  Warehouse : ${warehouse} <br/>
+  Couriers : ${courierList}`;
 
   const p = document.getElementById("result");
   // innerText tidak mengenal tag HTML. innerHTML kenal.
-  p.innerHTML = "Berubah !1!1";
+  p.innerHTML = information;
 };
