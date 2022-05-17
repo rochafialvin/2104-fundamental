@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market V.2</title>
+
+    <style>
+      table,
+      th,
+      td {
+        border: 1.2px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+      }
+
+      form {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">MARKET V.2.0</h1>
+
+    <form>
+      <fieldset>
+        <legend>Input Data</legend>
+        <table>
+          <td><input type="text" id="name" placeholder="Nama" /></td>
+          <td><input type="number" id="price" placeholder="Price" /></td>
+          <td><input type="number" id="stock" placeholder="Stock" /></td>
+        </table>
+        <p><input style="width: 100px" type="button" value="Input" /></p>
+      </fieldset>
+      <fieldset>
+        <legend>Data Table</legend>
+        <table>
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+          </thead>
+          <tbody id="tableBody">
+            <!-- di isi oleh javascript -->
+          </tbody>
+        </table>
+      </fieldset>
+    </form>
+
+    <script src="./market.js"></script>
+  </body>
+</html>
