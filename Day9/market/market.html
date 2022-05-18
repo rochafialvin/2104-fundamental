@@ -25,15 +25,22 @@
   <body>
     <h1 style="text-align: center">MARKET V.2.0</h1>
 
-    <form>
+    <form id="form">
       <fieldset>
         <legend>Input Data</legend>
         <table>
-          <td><input type="text" id="name" placeholder="Nama" /></td>
+          <td><input type="text" id="name" placeholder="Name" /></td>
           <td><input type="number" id="price" placeholder="Price" /></td>
           <td><input type="number" id="stock" placeholder="Stock" /></td>
         </table>
-        <p><input style="width: 100px" type="button" value="Input" /></p>
+        <p>
+          <input
+            style="width: 100px"
+            type="button"
+            value="Input"
+            onclick="fnInputData()"
+          />
+        </p>
       </fieldset>
       <fieldset>
         <legend>Data Table</legend>
