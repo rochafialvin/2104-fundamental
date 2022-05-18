@@ -26,6 +26,15 @@
     <h1 style="text-align: center">MARKET V.2.0</h1>
 
     <form id="form">
+      <!-- FILTER DATA -->
+      <fieldset>
+        <legend>Filter</legend>
+        <p>
+          <label for="filterName">Name</label>
+          <input type="text" id="filterName" oninput="fnFilterByName()" />
+        </p>
+      </fieldset>
+      <!-- INPUT DATA -->
       <fieldset>
         <legend>Input Data</legend>
         <table>
@@ -42,6 +51,7 @@
           />
         </p>
       </fieldset>
+      <!-- SHOW DATA -->
       <fieldset>
         <legend>Data Table</legend>
         <table>
@@ -59,5 +69,6 @@
     </form>
 
     <script src="./market.js"></script>
+    <div style="height: 1000px"></div>
   </body>
 </html>

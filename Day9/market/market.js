@@ -13,8 +13,8 @@ const products = [
   { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 },
 ];
 
-const fnRenderList = () => {
-  const listProduct = products.map((product) => {
+const fnRenderList = (arr) => {
+  const listProduct = arr.map((product) => {
     return `
       <tr>
          <td>${product.id}</td>
@@ -44,7 +44,26 @@ const fnInputData = () => {
   // reset form --> mengosongkan semua textbox
   document.getElementById("form").reset();
   // Mengupdate list data di table data
-  fnRenderList();
+  fnRenderList(products);
 };
 
-fnRenderList();
+const fnFilterByName = () => {
+  // Ambil keyword yang diketik oleh user
+  // keyword : HOODIE
+  const keyword = document.getElementById("filterName").value;
+  // Cari product yang mengandung keyword dari user
+
+  const resultFilter = products.filter((product) => {
+    // { id: 1652777173833, name: "Hoodie Jin", price: 120000, stock: 30 }
+    // name  : hoodie jin
+    const name = product.name.toLowerCase();
+    // lowerKeyword : hoodie
+    const lowerKeyword = keyword.toLowerCase();
+    // celana jin mengandung c false
+    return name.includes(lowerKeyword);
+  });
+  // Tampilkan di table
+  fnRenderList(resultFilter);
+};
+
+fnRenderList(products);
