@@ -7,11 +7,24 @@ class Product {
   }
 }
 
-const products = [
+let products = [
   { id: 1652777173833, name: "Celana Jin", price: 120000, stock: 30 },
   { id: 1652777222715, name: "Hoodie Jin", price: 150000, stock: 20 },
   { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 },
 ];
+
+/*
+  <tr> 
+     <td>1652777173833</td>
+     <td>Celana Jin</td>
+    <td><input onclick=fnDeleteById(1652777173833) ><td>
+  <tr>
+  <tr>
+    <td>1652777222715<td>
+    <td>Hoodie Jin</td>
+    <td><input onclick=fnDeleteById(1652777222715) ><td>
+  <tr>
+*/
 
 const fnRenderList = (arr) => {
   const listProduct = arr.map((product) => {
@@ -21,6 +34,8 @@ const fnRenderList = (arr) => {
          <td>${product.name}</td>
          <td>${product.price}</td>
          <td>${product.stock}</td>
+         <td><input type="button" value="Delete" onclick="fnDeleteById(${product.id})"></td>
+         <td><input type="button" value="Edit"></td>
       </tr>
       `;
   });
@@ -64,6 +79,14 @@ const fnFilterByName = () => {
   });
   // Tampilkan di table
   fnRenderList(resultFilter);
+};
+
+const fnDeleteById = (productId) => {
+  // 2715
+  // Dapatkan id dari product yang hendak dihapus
+  // hapus product berdasarkan id
+  products = products.filter((product) => product.id != productId);
+  fnRenderList(products);
 };
 
 fnRenderList(products);
