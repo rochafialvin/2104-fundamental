@@ -18,6 +18,7 @@ let products = [
      <td>1652777173833</td>
      <td>Celana Jin</td>
     <td><input onclick=fnDeleteById(1652777173833) ><td>
+    <td><input onclick=fnEdit(1652777173833) ><td>
   <tr>
   <tr>
     <td>1652777222715<td>
@@ -26,8 +27,26 @@ let products = [
   <tr>
 */
 
-const fnRenderList = (arr) => {
+const fnEdit = (productId) => {
+  // productId : 1652777173833
+  fnRenderList(products, productId);
+};
+
+const fnRenderList = (arr, productId) => {
+  // productId : 1652777173833
   const listProduct = arr.map((product) => {
+    if (product.id == productId) {
+      return `
+      <tr>
+         <td>${product.id}</td>
+         <td><input type="text" value="${product.name}"/></td>
+         <td><input type="text" value="${product.price}"/></td>
+         <td><input type="text" value="${product.stock}"/></td>
+         <td><input type="button" value="Save" onclick="fnSave()"></td>
+         <td><input type="button" value="Cancel" onclick="fnCancel()"></td>
+      </tr>
+      `;
+    }
     return `
       <tr>
          <td>${product.id}</td>
@@ -35,7 +54,7 @@ const fnRenderList = (arr) => {
          <td>${product.price}</td>
          <td>${product.stock}</td>
          <td><input type="button" value="Delete" onclick="fnDeleteById(${product.id})"></td>
-         <td><input type="button" value="Edit"></td>
+         <td><input type="button" value="Edit" onclick="fnEdit(${product.id})"></td>
       </tr>
       `;
   });
