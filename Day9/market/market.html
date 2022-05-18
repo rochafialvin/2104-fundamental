@@ -33,6 +33,19 @@
           <label for="filterName">Name</label>
           <input type="text" id="filterName" oninput="fnFilterByName()" />
         </p>
+        <p>
+          <label for="filterName">Price</label>
+          <input type="text" id="filterPriceMinimum" />
+          <input type="text" id="filterPriceMaximum" />
+          <p>
+            <input
+              style="width: 100px"
+              type="button"
+              value="Filter"
+              onclick="fnFilterByPrice()"
+            />
+          </p>
+        </p>
       </fieldset>
       <!-- INPUT DATA -->
       <fieldset>
@@ -60,12 +73,50 @@
             <th>Name</th>
             <th>Price</th>
             <th>Stock</th>
-            <th colspan="2">Action</th>
+            <th colspan="3">Action</th>
           </thead>
           <tbody id="tableBody">
             <!-- di isi oleh javascript -->
           </tbody>
         </table>
+      </fieldset>
+
+      <!-- CART -->
+      <fieldset>
+        <legend>Cart</legend>
+        <table>
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </thead>
+          <tbody id="tableCart">
+            <!-- di isi oleh javascript -->
+          </tbody>
+        </table>
+        <p>
+          <input
+            style="width: 100px"
+            type="button"
+            value="Calculate"
+            onclick="fnCalculateCart()"
+          />
+        </p>
+      </fieldset>
+
+      <!-- SUMMARY -->
+      <fieldset> 
+        <legend>Summary</legend>
+        <h2>Daftar Belanja</h2>
+
+        <p>1652777173833 | Celana Jin | 120.000 | 1</p>
+        <p>1652777173833 | Hoodie Jin | 100.000 | 1</p>
+        <p>1652777173833 | Tas Jin | 150.000 | 1</p>
+
+        <h3>Sub Total : Rp. 370.000</h3>
+        <h3>PPN: Rp. 37.000</h3>
+        <h3>Total : Rp. 407.000</h3>
       </fieldset>
     </form>
 

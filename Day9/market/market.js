@@ -13,6 +13,35 @@ let products = [
   { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 },
 ];
 
+let cart = [];
+
+const fnRenderCart = () => {
+  const listProduct = cart.map((product) => {
+    return `
+      <tr>
+         <td>${product.id}</td>
+         <td>${product.name}</td>
+         <td>${product.price}</td>
+         <td>${product.quantity}</td>
+      </tr>
+      `;
+  });
+
+  document.getElementById("tableCart").innerHTML = listProduct.join("");
+};
+
+const fnAddToCart = (productId) => {
+  // Temukan product berdasarkan id
+  const product = products.find((product) => product.id == productId);
+  // Buat object untuk dimasukkan ke cart
+  const { id, name, price } = product;
+  const cartObj = { id, name, price, quantity: 1 };
+  // Tambahin ke cart
+  cart.push(cartObj);
+
+  fnRenderCart();
+};
+
 /*
   <tr> 
      <td>1652777173833</td>
@@ -41,14 +70,16 @@ const fnSave = (productId) => {
   const stock = document.getElementById("editStock").value;
   const product = { id: productId, name, price, stock };
   // Tentukan product mana yang akan diubah / update
-  const froundIndex = products.findIndex((product) => {
+  const foundIndex = products.findIndex((product) => {
     return product.id == productId;
   });
   // Update data yang sudah ditentukan
-  products[froundIndex] = product;
+  products[foundIndex] = product;
 
   fnRenderList(products);
 };
+
+const fnFilterByPrice = () => {};
 
 const fnEdit = (productId) => {
   // productId : 1652777222715
@@ -80,6 +111,7 @@ const fnRenderList = (arr, productId) => {
          <td>${product.name}</td>
          <td>${product.price}</td>
          <td>${product.stock}</td>
+         <td><input type="button" value="Add" onclick="fnAddToCart(${product.id})"></td>
          <td><input type="button" value="Delete" onclick="fnDeleteById(${product.id})"></td>
          <td><input type="button" value="Edit" onclick="fnEdit(${product.id})"></td>
       </tr>
@@ -140,3 +172,4 @@ const fnCancel = () => {
 };
 
 fnRenderList(products);
+fnRenderCart();
