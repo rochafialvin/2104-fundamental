@@ -17,36 +17,63 @@ let products = [
   <tr> 
      <td>1652777173833</td>
      <td>Celana Jin</td>
-    <td><input onclick=fnDeleteById(1652777173833) ><td>
-    <td><input onclick=fnEdit(1652777173833) ><td>
+     <td>120.000</td>
+     <td><input onclick=fnEdit(1652777173833) ><td>
   <tr>
   <tr>
     <td>1652777222715<td>
-    <td>Hoodie Jin</td>
-    <td><input onclick=fnDeleteById(1652777222715) ><td>
+    <td><input value="Hoodie Jin" /></td>
+    <td><input value="100.000" /></td>
+    <td><input onclick=fnSave() ><td>
+  <tr>
+  <tr>
+    <td>1652777231256<td>
+    <td>Tas Jin</td>
+    <td>50.000</td>
+    <td><input onclick=fnEdit(1652777231256) ><td>
   <tr>
 */
+const fnSave = (productId) => {
+  // productId : 1652777222715
+  // Ambil value dari setiap text box
+  const name = document.getElementById("editName").value;
+  const price = document.getElementById("editPrice").value;
+  const stock = document.getElementById("editStock").value;
+  const product = { id: productId, name, price, stock };
+  // Tentukan product mana yang akan diubah / update
+  const froundIndex = products.findIndex((product) => {
+    return product.id == productId;
+  });
+  // Update data yang sudah ditentukan
+  products[froundIndex] = product;
+
+  fnRenderList(products);
+};
 
 const fnEdit = (productId) => {
-  // productId : 1652777173833
+  // productId : 1652777222715
   fnRenderList(products, productId);
 };
 
 const fnRenderList = (arr, productId) => {
-  // productId : 1652777173833
+  // productId : 1652777222715
   const listProduct = arr.map((product) => {
+    //product : { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 }
+    // 1652777231256 == 1652777222715 -- > false
     if (product.id == productId) {
+      // Text box
       return `
       <tr>
          <td>${product.id}</td>
-         <td><input type="text" value="${product.name}"/></td>
-         <td><input type="text" value="${product.price}"/></td>
-         <td><input type="text" value="${product.stock}"/></td>
-         <td><input type="button" value="Save" onclick="fnSave()"></td>
+         <td><input type="text" id="editName" value="${product.name}"/></td>
+         <td><input type="text" id="editPrice" value="${product.price}"/></td>
+         <td><input type="text" id="editStock" value="${product.stock}"/></td>
+         <td><input type="button" value="Save" onclick="fnSave(${product.id})"></td>
          <td><input type="button" value="Cancel" onclick="fnCancel()"></td>
       </tr>
       `;
     }
+    // Normal
     return `
       <tr>
          <td>${product.id}</td>
@@ -105,6 +132,10 @@ const fnDeleteById = (productId) => {
   // Dapatkan id dari product yang hendak dihapus
   // hapus product berdasarkan id
   products = products.filter((product) => product.id != productId);
+  fnRenderList(products);
+};
+
+const fnCancel = () => {
   fnRenderList(products);
 };
 
