@@ -8,12 +8,81 @@ class Product {
 }
 
 let products = [
-  { id: 1652777173833, name: "Celana Jin", price: 120000, stock: 30 },
-  { id: 1652777222715, name: "Hoodie Jin", price: 150000, stock: 20 },
-  { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 },
+  { id: 1652777173833, name: "Celana Jin", price: 30000, stock: 30 },
+  { id: 1652777222715, name: "Hoodie Jin", price: 53000, stock: 20 },
+  { id: 1652777231256, name: "Tas Jin", price: 90000, stock: 11 },
+  { id: 1652777231255, name: "Hat", price: 125000, stock: 13 },
+  { id: 1652777231267, name: "T-Shirt O neck", price: 32000, stock: 24 },
+  { id: 1652777231278, name: "T-Shirt V neck", price: 45000, stock: 45 },
+  { id: 1652777231289, name: "T-Shirt Oversize", price: 170000, stock: 19 },
 ];
 
 let cart = [];
+
+const fnRenderList = (arr, productId) => {
+  // productId : 1652777222715
+  const listProduct = arr.map((product) => {
+    //product : { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 }
+    // 1652777231256 == 1652777222715 -- > false
+    if (product.id == productId) {
+      // Text box
+      return `
+      <tr>
+         <td>${product.id}</td>
+         <td><input type="text" id="editName" value="${product.name}"/></td>
+         <td><input type="text" id="editPrice" value="${product.price}"/></td>
+         <td><input type="text" id="editStock" value="${product.stock}"/></td>
+         <td><input type="button" value="Save" onclick="fnSave(${product.id})"></td>
+         <td><input type="button" value="Cancel" onclick="fnCancel()"></td>
+      </tr>
+      `;
+    }
+    // Normal
+    return `
+      <tr>
+         <td>${product.id}</td>
+         <td>${product.name}</td>
+         <td>${product.price}</td>
+         <td>${product.stock}</td>
+         <td><input type="button" value="Add" onclick="fnAddToCart(${product.id})"></td>
+         <td><input type="button" value="Delete" onclick="fnDeleteById(${product.id})"></td>
+         <td><input type="button" value="Edit" onclick="fnEdit(${product.id})"></td>
+      </tr>
+      `;
+  });
+
+  document.getElementById("tableBody").innerHTML = listProduct.join("");
+};
+
+const fnFilterByPrice = () => {
+  const priceMinimum = parseInt(
+    document.getElementById("filterPriceMinimum").value
+  );
+  const priceMaximum = parseInt(
+    document.getElementById("filterPriceMaximum").value
+  );
+  if (!priceMinimum && !priceMaximum) {
+    return fnRenderList(products);
+  }
+
+  const result = products.filter((product) => {
+    // { id: 1652777231255, name: "Hat", price: 125000, stock: 13 }
+    // true && false --> false
+    if (!priceMaximum) {
+      //  filter by minimum
+      return product.price >= priceMinimum;
+    } else if (!priceMinimum) {
+      //  filter by maximum
+      return product.price <= priceMaximum;
+    } else {
+      //  filter by minimum and maximum
+      return product.price >= priceMinimum && product.price <= priceMaximum;
+    }
+  });
+
+  // Render hasil filter
+  fnRenderList(result);
+};
 
 const fnRenderCart = () => {
   const listProduct = cart.map((product) => {
@@ -79,46 +148,9 @@ const fnSave = (productId) => {
   fnRenderList(products);
 };
 
-const fnFilterByPrice = () => {};
-
 const fnEdit = (productId) => {
   // productId : 1652777222715
   fnRenderList(products, productId);
-};
-
-const fnRenderList = (arr, productId) => {
-  // productId : 1652777222715
-  const listProduct = arr.map((product) => {
-    //product : { id: 1652777231256, name: "Tas Jin", price: 170000, stock: 10 }
-    // 1652777231256 == 1652777222715 -- > false
-    if (product.id == productId) {
-      // Text box
-      return `
-      <tr>
-         <td>${product.id}</td>
-         <td><input type="text" id="editName" value="${product.name}"/></td>
-         <td><input type="text" id="editPrice" value="${product.price}"/></td>
-         <td><input type="text" id="editStock" value="${product.stock}"/></td>
-         <td><input type="button" value="Save" onclick="fnSave(${product.id})"></td>
-         <td><input type="button" value="Cancel" onclick="fnCancel()"></td>
-      </tr>
-      `;
-    }
-    // Normal
-    return `
-      <tr>
-         <td>${product.id}</td>
-         <td>${product.name}</td>
-         <td>${product.price}</td>
-         <td>${product.stock}</td>
-         <td><input type="button" value="Add" onclick="fnAddToCart(${product.id})"></td>
-         <td><input type="button" value="Delete" onclick="fnDeleteById(${product.id})"></td>
-         <td><input type="button" value="Edit" onclick="fnEdit(${product.id})"></td>
-      </tr>
-      `;
-  });
-
-  document.getElementById("tableBody").innerHTML = listProduct.join("");
 };
 
 // Hanya akan dipanggil jika di tekan tombol input
