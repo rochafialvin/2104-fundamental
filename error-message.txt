@@ -13,3 +13,6 @@ TypeError: running is not a function
 TypeError: x.toUpperCase is not a function
    x tidak memiliki method yang bernama toUpperCase
    toUpperCase milik x bukanlah sebuah function
+
+Uncaught SyntaxError: redeclaration of formal parameter priceMinimum
+   Error karena kita membuat variable priceMinimum yang mana sudah dijadikan sebuah parameter
