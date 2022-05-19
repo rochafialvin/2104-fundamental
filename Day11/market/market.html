@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market V.2</title>
+
+    <style>
+      table,
+      th,
+      td {
+        border: 1.2px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+      }
+
+      form {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">MARKET V.2.0</h1>
+
+    <form id="form">
+      <!-- FILTER DATA -->
+      <fieldset>
+        <legend>Filter</legend>
+        <p>
+          <label for="filterName">Name</label>
+          <input type="text" id="filterName" oninput="fnFilterByName()" />
+        </p>
+        <p>
+          <label for="filterName">Price</label>
+          <input
+            type="text"
+            id="filterPriceMinimum"
+            oninput="fnFilterByPrice()"
+          />
+          <input
+            type="text"
+            id="filterPriceMaximum"
+            oninput="fnFilterByPrice()"
+          />
+        </p>
+      </fieldset>
+      <!-- INPUT DATA -->
+      <fieldset>
+        <legend>Input Data</legend>
+        <table>
+          <td><input type="text" id="name" placeholder="Name" /></td>
+          <td><input type="number" id="price" placeholder="Price" /></td>
+          <td><input type="number" id="stock" placeholder="Stock" /></td>
+        </table>
+        <p>
+          <input
+            style="width: 100px"
+            type="button"
+            value="Input"
+            onclick="fnInputData()"
+          />
+        </p>
+      </fieldset>
+      <!-- SHOW DATA -->
+      <fieldset>
+        <legend>Data Table</legend>
+        <table>
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th colspan="3">Action</th>
+          </thead>
+          <tbody id="tableBody">
+            <!-- di isi oleh javascript -->
+          </tbody>
+        </table>
+      </fieldset>
+
+      <!-- CART -->
+      <fieldset>
+        <legend>Cart</legend>
+        <table>
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="tableCart">
+            <!-- di isi oleh javascript -->
+          </tbody>
+        </table>
+        <p>
+          <input
+            style="width: 100px"
+            type="button"
+            value="Calculate"
+            onclick="fnCalculateCart()"
+          />
+        </p>
+      </fieldset>
+
+      <!-- SUMMARY -->
+      <fieldset>
+        <legend>Summary</legend>
+        <h2>Daftar Belanja</h2>
+        <p id="summary"></p>
+      </fieldset>
+    </form>
+
+    <!-- <table>
+      <tr>
+        <td>1 - 1</td>
+        <td>1 - 2</td>
+        <td>1 - 3</td>
+        <td>1 - 4</td>
+      </tr>
+      <tr>
+        <td>2 - 1</td>
+        <td colspan="3">2 - 3</td>
+      </tr>
+      <tr>
+        <td>3 - 1</td>
+        <td>3 - 2</td>
+        <td>3 - 3</td>
+        <td rowspan="2">3 - 4</td>
+      </tr>
+      <tr>
+        <td>4 - 1</td>
+        <td>4 - 2</td>
+        <td>4 - 3</td>
+      </tr>
+    </table> -->
+
+    <script src="./market.js"></script>
+    <div style="height: 1000px"></div>
+  </body>
+</html>

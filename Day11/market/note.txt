@@ -1,0 +1,5 @@
+1. saat menekan tombol Add, tampilkan prompt untuk input jumalh quantity
+2. jika permintaan melebihi stock, cancel
+3. jika tidak melebihi stock, masukkan ke cart, kurangkan stock
+
+4. delete cart akan menghapus data cart dan mengembalikan stock
