@@ -114,19 +114,32 @@ const fnFilterByPrice = () => {
 };
 
 const fnRenderCart = () => {
-  const listProduct = cart.map((product) => {
+  const listProduct = cart.map((cart) => {
     return `
       <tr>
-         <td>${product.id}</td>
-         <td>${product.name}</td>
-         <td>${product.price}</td>
-         <td>${product.quantity}</td>
-         <td><input type="button" value="Delete" onclick="fnDeleteCart(${product.id})"/></td>
+         <td>${cart.id}</td>
+         <td>${cart.name}</td>
+         <td>${cart.price}</td>
+         <td>${cart.quantity}</td>
+         <td><input type="button" value="Delete" onclick="fnDeleteCart(${cart.id})"/></td>
       </tr>
       `;
   });
 
   document.getElementById("tableCart").innerHTML = listProduct.join("");
+};
+
+const fnDeleteCart = (cartId) => {
+  // Temukan index di cart
+  const cartIndex = cart.findIndex((cart) => cart.id == cartId);
+  // Pulangin stock
+  const productIndex = products.findIndex((cart) => cart.id == cartId);
+  products[productIndex].stock += cart[cartIndex].quantity;
+  // Hapus dari cart
+  cart.splice(cartIndex, 1);
+
+  fnRenderList(products);
+  fnRenderCart();
 };
 
 const fnAddToCart = (productId) => {
@@ -138,12 +151,15 @@ const fnAddToCart = (productId) => {
   if (quantity > product.stock) {
     return alert("Permintaan melebihi stock, gagal menambahkan ke cart");
   }
+  // Kurangi stock
+  product.stock -= quantity;
   // Buat object untuk dimasukkan ke cart
   const { id, name, price } = product;
   const cartObj = { id, name, price, quantity };
   // Tambahin ke cart
   cart.push(cartObj);
 
+  fnRenderList(products);
   fnRenderCart();
 };
 
