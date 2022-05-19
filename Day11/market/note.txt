@@ -3,3 +3,4 @@
 3. jika tidak melebihi stock, masukkan ke cart, kurangkan stock
 
 4. delete cart akan menghapus data cart dan mengembalikan stock
+

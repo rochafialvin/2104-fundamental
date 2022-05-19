@@ -151,13 +151,27 @@ const fnAddToCart = (productId) => {
   if (quantity > product.stock) {
     return alert("Permintaan melebihi stock, gagal menambahkan ke cart");
   }
-  // Kurangi stock
-  product.stock -= quantity;
-  // Buat object untuk dimasukkan ke cart
-  const { id, name, price } = product;
-  const cartObj = { id, name, price, quantity };
-  // Tambahin ke cart
-  cart.push(cartObj);
+
+  // Apakah product ini sudah ada di cart ?
+  const foundCartIndex = cart.findIndex((cart) => {
+    return cart.id == productId;
+  });
+
+  // Jika sudah cart ditemukan
+  if (foundCartIndex >= 0) {
+    // Update qty
+    cart[foundCartIndex].quantity += quantity;
+    // Kurangi stock
+    product.stock -= quantity;
+  } else {
+    // Kurangi stock
+    product.stock -= quantity;
+    // Buat object untuk dimasukkan ke cart
+    const { id, name, price } = product;
+    const cartObj = { id, name, price, quantity };
+    // Tambahin ke cart
+    cart.push(cartObj);
+  }
 
   fnRenderList(products);
   fnRenderCart();
