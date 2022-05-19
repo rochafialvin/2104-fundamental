@@ -17,11 +17,7 @@ let products = [
   { id: 1652777231289, name: "T-Shirt Oversize", price: 170000, stock: 19 },
 ];
 
-let cart = [
-  { id: 1652777231289, name: "T-Shirt Oversize", price: 10000, quantity: 1 },
-  { id: 1652777231287, name: "T-Shirt O neck", price: 150000, quantity: 2 },
-  { id: 1652777231287, name: "T-Shirt O neck", price: 150000, quantity: 1 },
-];
+let cart = [];
 
 const fnRenderList = (arr, productId) => {
   // productId : 1652777222715
@@ -125,7 +121,7 @@ const fnRenderCart = () => {
          <td>${product.name}</td>
          <td>${product.price}</td>
          <td>${product.quantity}</td>
-         <td><input type="button" onclick="fnDeleteCart(${product.id})"/></td>
+         <td><input type="button" value="Delete" onclick="fnDeleteCart(${product.id})"/></td>
       </tr>
       `;
   });
@@ -136,9 +132,15 @@ const fnRenderCart = () => {
 const fnAddToCart = (productId) => {
   // Temukan product berdasarkan id
   const product = products.find((product) => product.id == productId);
+  // Minta input quantity
+  const quantity = parseInt(prompt("Masukkan jumlah quantity"));
+  // Apakah quantity yang diminta melebihi stock ?
+  if (quantity > product.stock) {
+    return alert("Permintaan melebihi stock, gagal menambahkan ke cart");
+  }
   // Buat object untuk dimasukkan ke cart
   const { id, name, price } = product;
-  const cartObj = { id, name, price, quantity: 1 };
+  const cartObj = { id, name, price, quantity };
   // Tambahin ke cart
   cart.push(cartObj);
 
