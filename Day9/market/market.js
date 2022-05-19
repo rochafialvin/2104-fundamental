@@ -17,7 +17,11 @@ let products = [
   { id: 1652777231289, name: "T-Shirt Oversize", price: 170000, stock: 19 },
 ];
 
-let cart = [];
+let cart = [
+  { id: 1652777231289, name: "T-Shirt Oversize", price: 10000, quantity: 1 },
+  { id: 1652777231287, name: "T-Shirt O neck", price: 150000, quantity: 2 },
+  { id: 1652777231287, name: "T-Shirt O neck", price: 150000, quantity: 1 },
+];
 
 const fnRenderList = (arr, productId) => {
   // productId : 1652777222715
@@ -52,6 +56,35 @@ const fnRenderList = (arr, productId) => {
   });
 
   document.getElementById("tableBody").innerHTML = listProduct.join("");
+};
+
+const fnCalculateCart = () => {
+  // Cari subtotal
+  const subtotal = cart.reduce((prev, curr) => {
+    const a = prev; // 460000
+    const b = curr.price * curr.quantity;
+    return a + b; // 310000 + 150000
+  }, 0);
+
+  // Cari ppn
+  const ppn = subtotal * 0.11;
+  // Cari total = subtotal + ppn
+  const total = subtotal + ppn;
+
+  // Render summary
+  const listPayment = cart
+    .map((cartObj) => {
+      const { id, name, price, quantity } = cartObj;
+      return `<p>${id} || ${name} || ${price} || ${quantity}</p>`;
+    })
+    .join("");
+
+  const listTotal = `
+    <h3>Sub Total : Rp. ${subtotal.toLocaleString("id")}</h3>
+    <h3>PPN: Rp. ${ppn.toLocaleString("id")}</h3>
+    <h3>Total : Rp. ${total.toLocaleString("id")}</h3>`;
+
+  document.getElementById("summary").innerHTML = listPayment + listTotal;
 };
 
 const fnFilterByPrice = () => {

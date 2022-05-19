@@ -16,23 +16,35 @@
 // console.log({ result });
 
 // Menampilkan angka yang muncul di semua array
-const arr = [
-  [1, 4, 6, 5, 3],
-  [4, 3, 6, 9],
-  [9, 7, 4, 6, 2],
-];
+// const arr = [
+//   [1, 4, 6, 5, 3],
+//   [4, 3, 6, 9],
+//   [9, 7, 4, 6, 2],
+// ];
 
-// prev : [4, 6]
-// curr : [9, 7, 4, 6, 2]
-// return prev.filter()
-const result = arr.reduce((prev, curr) => {
-  // [1, 4, 6, 5, 3]
-  // [4, 6 ,3]
-  const filterResult = prev.filter((number) => {
-    // [4, 3, 6, 9]
-    //  apakah number ada di dalam array curr ? true
-    return curr.includes(number);
-  });
+// // prev : [4, 6]
+// // curr : [9, 7, 4, 6, 2]
+// // return prev.filter()
+// const result = arr.reduce((prev, curr) => {
+//   // [1, 4, 6, 5, 3]
+//   // [4, 6 ,3]
+//   const filterResult = prev.filter((number) => {
+//     // [4, 3, 6, 9]
+//     //  apakah number ada di dalam array curr ? true
+//     return curr.includes(number);
+//   });
 
-  return filterResult;
+//   return filterResult;
+// });
+
+const numbers = [1, 2, 3];
+
+// 1 + 2 + 3
+const result = numbers.reduce((prev, curr) => {
+  return prev + curr;
 });
+
+// 0 + 1 + 3
+const result2 = numbers.reduce((prev, curr) => {
+  return prev + curr;
+}, 0);
