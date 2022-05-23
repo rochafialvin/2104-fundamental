@@ -1,0 +1,8 @@
+/* git commit -m "Message" */
+/* Membuat sebuah commit (checkpoint / save-an) dengan "Message" tertentu */
+
+/* git log */
+/* Menampilkan daftar commit dengan informasi lengkap */
+
+/* git log --oneline */
+/* Menampilkan daftar commit dengan informasi singkat */

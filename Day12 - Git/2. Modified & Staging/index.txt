@@ -1,0 +1,16 @@
+/* git status */
+Melihat status isi dari repository
+
+/* git add index.html */
+/* Mengcopy file index.html dari area working ke stage */
+
+/* git add .*/
+/* Mengcopy semua file dari area working ke stage */
+
+/* git status */
+/* Untracked : File yang belum di copy ke stage*/
+/* Modified : File yang memiliki perbedaan versi pada area working dan stage*/
+/* Working tree clean : versi pada modified dan stage itu sama*/
+
+/* git restore */
+/* Meng-cancel perubahan yang terjadi pada file yang sudah pernah di commit */
