@@ -1,0 +1,6 @@
+/* git revert 3e4f178 */
+/* Meng-cancel feature yang dibuat pada commit 3e4f178 */
+
+/* git reset 3e4f178 */
+/* Menghapus semua daftar commit yang terjadi setelah commit  3e4f178 */
+/* code nya tidak hilang */
