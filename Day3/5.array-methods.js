@@ -220,9 +220,9 @@
 //   ["Roschild", 10000],
 // ];
 
-// // positif : sort person2 before person1
-// // negatif : sort person1 before person2
-// // zero : keep original order of person1 and person2
+// positif : sort person2 before person1
+// negatif : sort person1 before person2
+// zero : keep original order of person1 and person2
 // var sortSalary = (person1, person2) => {
 //   // person1 : ["Fedrick", 720]
 //   // person2 : ["John Titor", 360]
