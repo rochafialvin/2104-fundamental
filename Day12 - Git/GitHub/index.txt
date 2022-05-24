@@ -1,0 +1,8 @@
+/* git remote add origin https://github */
+/* Set variable remote baru bernama origin */
+
+/* git remote set-url origin https://github */
+/* Set ulang link untuk variable remote origin */
+
+/* git remote remove origin */
+/* Menghapus variable remote origin */
