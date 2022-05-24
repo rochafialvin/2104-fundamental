@@ -46,7 +46,7 @@ const getCategories = () => {
 const getVouchers = () => {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(["PWDLEBARAN", "PWDNGAJAKTEMEN", "PWDTAPMANTAP"]);
+      reject(["PWDLEBARAN", "PWDNGAJAKTEMEN", "PWDTAPMANTAP"]);
     }, 1000);
   });
 
@@ -70,13 +70,13 @@ getProducts("e")
             console.log({ status: "success", vouchers });
           })
           .catch((err) => {
-            console.log({ status: "error", message: err.message });
+            console.log({ status: "error voucher", message: err.message });
           });
       })
       .catch((err) => {
-        console.log({ status: "error", message: err.message });
+        console.log({ status: "error categories", message: err.message });
       });
   })
   .catch((err) => {
-    console.log({ status: "error", message: err.message });
+    console.log({ status: "error products", message: err.message });
   });
