@@ -7,6 +7,8 @@
 // setTimeout(x, 2000);
 // console.log("Selesai");
 
+// ES 5
+
 const products = [
   { id: 1, name: "Shoes", price: 150000 },
   { id: 2, name: "TV", price: 180000 },
@@ -33,7 +35,6 @@ const getProducts = (keyword, callSuccess, callError) => {
 
 const showProducts = (data) => {
   console.log({ status: "success", data });
-  console.log("Running setelah getproducts selesai");
 };
 
 const showError = (error) => {
