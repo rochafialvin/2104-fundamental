@@ -1,4 +1,4 @@
-// ES 6 - Then & Catch
+// ES 7 - Async & Await
 const products = [
   { id: 1, name: "Shoes", price: 150000 },
   { id: 2, name: "TV", price: 180000 },
@@ -19,7 +19,6 @@ const getProducts = (keyword) => {
       });
 
       if (filteredProducts.length) {
-        // lanjut ke "then"
         // filteredProducts akan masuk ke "res"
         resolve(filteredProducts);
       } else {
@@ -53,30 +52,17 @@ const getVouchers = () => {
   return promise;
 };
 
-// berhasil --> then
-// gagal --> catch
-getProducts("e")
-  .then((products) => {
+const callme = async () => {
+  try {
+    const products = await getProducts("e");
     console.log({ status: "success", products });
-  })
-  .then((res) => {
-    getCategories()
-      .then((categories) => {
-        console.log({ status: "success", categories });
-      })
-      .then((res) => {
-        getVouchers()
-          .then((vouchers) => {
-            console.log({ status: "success", vouchers });
-          })
-          .catch((err) => {
-            console.log({ status: "error", message: err.message });
-          });
-      })
-      .catch((err) => {
-        console.log({ status: "error", message: err.message });
-      });
-  })
-  .catch((err) => {
+    const categories = await getCategories();
+    console.log({ status: "success", categories });
+    const vouchers = await getVouchers();
+    console.log({ status: "success", vouchers });
+  } catch (err) {
     console.log({ status: "error", message: err.message });
-  });
+  }
+};
+
+callme();
