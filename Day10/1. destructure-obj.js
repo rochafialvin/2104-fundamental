@@ -6,7 +6,7 @@ const person = {
 };
 
 // Dari object person, create variable baru berdasarkan property dari object person
-const { firstName, lastName } = person;
+const { lastName, firstName } = person;
 
 console.log(`Hello my first name is ${firstName}`);
 console.log(`Halo nama depan saya adalah ${firstName}`);
