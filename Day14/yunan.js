@@ -13,7 +13,7 @@ const rawDatas = {
 function filterByContent(filter, data) {}
 
 // Example 1
-filterByContent("Engineering");
+filterByContent("Engineering", rawDatas);
 const example = {
   nationality: "Canada",
   owners: ["James Hobson", "Mehdi"],
@@ -22,7 +22,7 @@ const example = {
 };
 
 // Example 2
-filterByContent("Comedy");
+filterByContent("Comedy", rawDatas);
 const example2 = {
   nationality: "Canada",
   owners: ["Mehdi", "Ryan George"],
